@@ -1,0 +1,181 @@
+@import "variables";
+@import "../libs/bootstrap4/scss/_mixins";
+
+@mixin background-color-rgba($color, $alpha: .7) {
+  $ie-hex-str: ie-hex-str(rgba($color, $alpha));
+
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str}, endColorstr=#{$ie-hex-str})";
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#{$ie-hex-str}, endColorstr=#{$ie-hex-str});
+
+  background-color: rgba($color, $alpha);
+}
+
+// unit conversion
+@function pxToEm($px, $newFontSize: false) {
+  @if $newFontSize {
+    @return $px / $newFontSize * 1em;
+  } @else {
+    @return $px / $baseFontSize * 1em;
+  }
+}
+@function pxToRem($px, $newFontSize: false) {
+  @if $newFontSize {
+    @return $px / $newFontSize * 1rem;
+  } @else {
+    @return $px / $baseFontSize * 1rem;
+  }
+}
+// 用于生成 line-height 值
+@function pxToNum($px, $newFontSize: false) {
+  @if $newFontSize {
+    @return $px / $newFontSize;
+  } @else {
+    @return $px / $baseFontSize;
+  }
+}
+
+@function toNum($val) {
+  @if("px" == unit($val)) {
+    @return $val / 1px;
+  } @else if("em" == unit($val)) {
+    @return $val / 1em;
+  } @else if("rem" == unit($val)) {
+    @return $val / 1rem;
+  }
+}
+@function middleImg($val, $border: false) {
+  @if $border {
+    @return 0.9705882352941176 * ($val - $border);
+  } @else {
+    @return 0.9705882352941176 * $val;
+  }
+}
+
+// my add mixins
+// ---- from amazeui -----
+// =============================================================================
+// Caret
+@mixin caret-base() {
+  display: inline-block;
+  width: 0;
+  height: 0;
+}
+
+// Caret - down
+// -----------------------------------------------------------------------------
+@mixin caret-down($size: 6px, $color:#222) {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-top: $size solid $color;
+  border-right: $size solid transparent;
+  border-left: $size solid transparent;
+  border-bottom: 0 dotted;
+  transform: rotate(360deg);
+}
+
+// Caret - up
+// -----------------------------------------------------------------------------
+@mixin caret-up($size:6px, $color:#222) {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-bottom: $size solid $color;
+  border-right: $size solid transparent;
+  border-left: $size solid transparent;
+  border-top: 0 dotted;
+  transform: rotate(360deg);
+}
+
+// Caret - left
+// -----------------------------------------------------------------------------
+@mixin caret-left($size:6px, $color:#222) {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-right: $size solid $color;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-left: 0 dotted;
+  transform: rotate(360deg);
+}
+
+// Caret - right
+// -----------------------------------------------------------------------------
+@mixin caret-right($size:6px, $color:#222) {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-left: $size solid $color;
+  border-top: $size solid transparent;
+  border-bottom: $size solid transparent;
+  border-right: 0 dotted;
+  transform: rotate(360deg);
+}
+
+// 使用伪元素来生成边框
+@mixin border($dir: bottom, $color: #dddddd, $width: 1px) {
+  position: relative;
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: $width;
+    background-color: $color;
+  }
+  @if $dir == top {
+    &:before {
+      top: 0;
+    }
+  }
+  @if $dir == bottom {
+    &:after {
+      bottom: 0;
+    }
+  }
+}
+
+@mixin slenderBorder ($dir: bottom, $color: $grayBorder, $width: 1px, $whereEl: after ) {
+  position: relative;
+  &:#{$whereEl} {
+    position: absolute;
+    content: '';
+    transform: scaleY(.5);
+    background-color: $color;
+
+
+    @if $dir == top {
+      top: 0;
+      left: 0;
+      right: 0;
+      height: $width;
+      -webkit-transform: scaleY(.5);
+    }
+    @if $dir == bottom {
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: $width;
+      -webkit-transform: scaleY(.5);
+    }
+    @if $dir == left {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: $width;
+      -webkit-transform: scaleX(.5);
+    }
+    @if $dir == right {
+      top: 0;
+      bottom: 0;
+      right: 0;
+      width: $width;
+      -webkit-transform: scaleX(.5);
+    }
+  }
+}

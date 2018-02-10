@@ -1,0 +1,108 @@
+@charset "UTF-8";
+.animated {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+    position: relative;
+}
+
+.animated.infinite { animation-iteration-count: infinite; }
+
+.animated.hinge { animation-duration: 2s; }
+
+.Intop { animation-name: Intop;}
+.Intops { animation-name: Intops;}
+.Inbottom { animation-name: Inbottom;}
+.fadeInbottom { animation-name: fadeInbottom;}
+.fadeInleft { animation-name: fadeInleft;}
+.fadeInlefts { animation-name: fadeInlefts;}
+.fadeInright { animation-name: fadeInright;}
+.fadeInrights { animation-name: fadeInrights;}
+.fadeInshow { animation-name: fadeInshow;}
+
+
+@keyframes Intop {
+  0%{
+    opacity: 0;
+    top:-100px;
+  }
+  100%{
+    opacity: 1;
+    top:0;
+  }
+}
+
+@keyframes Intops {
+  0%{
+    opacity: 0;
+    top:-100px;
+  }
+  100%{
+    opacity: 1;
+    top:60;
+  }
+}
+@keyframes Inbottom {
+  0%{
+    opacity: 0;
+    bottom:-500px;
+  }
+  100%{
+    opacity: 1;
+    bottom:0px;
+  }
+}
+@keyframes fadeInbottom {
+  0%{
+    opacity: 0;
+    bottom:-500px;
+  }
+  100%{
+    opacity: 1;
+    bottom:240;
+  }
+}
+
+@keyframes fadeInleft {
+  0%{
+    opacity: 0;
+    left:-100px;
+  }
+
+  100%{
+    opacity: 1;
+    left:0;
+  }
+}
+@keyframes fadeInlefts {
+  0%{
+    opacity: 0;
+    left:-500px;
+  }
+
+  100%{
+    opacity: 1;
+    left:286px;
+  }
+}
+@keyframes fadeInright {
+  0%{
+    opacity: 0;
+    right:-100px;
+  }
+
+  100%{
+    opacity: 1;
+    right:0;
+  }
+}
+@keyframes fadeInrights {
+  0%{
+    opacity: 0;
+    right:-500px;
+  }
+
+  100%{
+    opacity: 1;
+    right:236px;
+  }
+}

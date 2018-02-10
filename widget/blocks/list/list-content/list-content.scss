@@ -1,0 +1,19 @@
+@import "../_list-config";
+
+.list-content {
+  // override default style
+  .list-group-item {
+    overflow: visible;
+    white-space: normal;
+  }
+  .title {
+    @include text-truncate();
+    margin-bottom: .5em;
+    font-size: pxToEm(15px);
+    font-family: "Microsoft YaHei", "Microsoft JhengHei", STHeiti, MingLiu;
+  }
+  .text {
+    line-height: 1.5;
+    color: $gray;
+  }
+}

@@ -1,0 +1,66 @@
+@import "../_new-detail-config";
+
+//  新闻详细页组件
+.newstype-detail {
+  padding: 1px pxToEm(25px);
+  p { color: $gray2; }
+  .hd-title {
+    font-size: pxToEm(24px);
+    padding: .5em 0;
+    margin-bottom: 10px;
+    text-align: center;
+    font-family: "Microsoft YaHei", "Microsoft JhengHei", STHeiti, MingLiu;
+    border-bottom: 1px solid $gray-lighter;
+  }
+  .top-sub-info {
+    margin-bottom: 1em;
+    font-size: pxToEm(12px);
+    color: lighten($gray-light, 0%);
+    em {
+      color: $activeColor;
+      font-weight: bold;
+      margin: 0 3px;
+    }
+    .span {
+      display: inline-block;
+      margin-right: 2em;
+    }
+  }
+  .top-sub-info-right {
+    ul {
+      display: inline-block;
+      margin-left: 3px;
+    }
+    li {
+      display: inline-block;
+      margin-right: 2px;
+    }
+  }
+
+  .detail-info {
+    margin-top: 1em;
+    line-height: 2.2em;
+    .title {
+      font-weight: bold;
+      margin: .5em 0;
+    }
+    p {
+      text-indent: 2em;
+      margin-bottom: 12px;
+    }
+    .img {margin: 1em 1.2em; }
+  }
+  .labels {
+    margin: 10px 0;
+    border-top: 1px solid $gray-lighter;
+  }
+
+  .page-neighbor {
+    line-height: 3em;
+    margin-top: 20px;
+    font-size: pxToEm(12px);
+    border-top: 1px solid $gray-lighter;
+    em { color: $activeColor; }
+  }
+  p a { color: #337ab7; }
+}

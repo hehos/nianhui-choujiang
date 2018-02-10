@@ -1,0 +1,46 @@
+.media-waterfall {
+  margin-left: -2%;
+  padding: 10px; }
+  .media-waterfall:before, .media-waterfall:after {
+    content: " ";
+    display: table; }
+  .media-waterfall:after {
+    clear: both; }
+  .media-waterfall .items-group {
+    float: left;
+    margin-left: 2%;
+    width: 23%; }
+  .media-waterfall .thumbnail:hover, .media-waterfall thumb:hover, .media-waterfall .img:hover {
+    border: none; }
+  .media-waterfall li, .media-waterfall .media-item {
+    visibility: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px;
+    -webkit-box-shadow: 0 0 8px #ccc;
+    box-shadow: 0 0 8px #ccc;
+    background-color: #fff; }
+    .media-waterfall li:hover, .media-waterfall .media-item:hover {
+      -webkit-box-shadow: 0 0 10px #999;
+      box-shadow: 0 0 10px #999;
+      background-color: #f3f3f3; }
+  .media-waterfall.media-col2 .items-group {
+    width: 48%; }
+  .media-waterfall.media-col3 .items-group {
+    width: 31.33333%; }
+  .media-waterfall.media-col4 .items-group {
+    width: 23%; }
+  .media-waterfall.media-col5 .items-group {
+    width: 18%; }
+  .media-waterfall.media-col6 .items-group {
+    width: 14.66667%; }
+  .media-waterfall.media-col7 .items-group {
+    width: 12.28571%; }
+  .media-waterfall.media-col8 .items-group {
+    width: 10.5%; }
+
+
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJsb2Nrcy9tZWRpYS9tZWRpYS13YXRlcmZhbGwvbWVkaWEtd2F0ZXJmYWxsLnNjc3MiLCJsaWJzL2Jvb3RzdHJhcDQvc2Nzcy9taXhpbnMvX2NsZWFyZml4LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBSUE7RUFFRSxpQkFBd0I7RUFDeEIsY0FBYSxFQUFBO0VDTWI7SUFFRSxhQUFZO0lBQ1osZUFBYyxFQUFBO0VBRWhCO0lBQ0UsWUFBVyxFQUFBO0VEVGI7SUFDRSxZQUFXO0lBQ1gsZ0JBUFk7SUFRWixXQUFxQyxFQUFBO0VBSXJDO0lBQVUsYUFBWSxFQUFBO0VBR3hCO0lBQ0UsbUJBQWtCO0lBQ2xCLFlBQVc7SUFDWCxvQkFBbUI7SUFDbkIsYUFBWTtJQUNaLGlDQUFnQztJQUNoQyx5QkFBd0I7SUFDeEIsdUJBQXNCLEVBQUE7SUFDdEI7TUFDRSxrQ0FBeUI7TUFBekIsMEJBQXlCO01BQ3pCLDBCQUF5QixFQUFBO0VBSzNCO0lBQWdDLFdBQXNDLEVBQUE7RUFBdEU7SUFBZ0MsaUJBQXNDLEVBQUE7RUFBdEU7SUFBZ0MsV0FBc0MsRUFBQTtFQUF0RTtJQUFnQyxXQUFzQyxFQUFBO0VBQXRFO0lBQWdDLGlCQUFzQyxFQUFBO0VBQXRFO0lBQWdDLGlCQUFzQyxFQUFBO0VBQXRFO0lBQWdDLGFBQXNDLEVBQUEiLCJmaWxlIjoiYmxvY2tzL21lZGlhL21lZGlhLXdhdGVyZmFsbC9tZWRpYS13YXRlcmZhbGwuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcIi4uL21lZGlhLWNvbmZpZ1wiO1xyXG5cclxuLy8g54CR5biD5rWB5o+S5Lu2XHJcblxyXG4ubWVkaWEtd2F0ZXJmYWxsIHtcclxuICAkZ3JvdXBEaXN0OiAyJTtcclxuICBtYXJnaW4tbGVmdDogLSRncm91cERpc3Q7XHJcbiAgcGFkZGluZzogMTBweDtcclxuICBAaW5jbHVkZSBjbGVhcmZpeCgpO1xyXG5cclxuICAuaXRlbXMtZ3JvdXAge1xyXG4gICAgZmxvYXQ6IGxlZnQ7XHJcbiAgICBtYXJnaW4tbGVmdDogJGdyb3VwRGlzdDtcclxuICAgIHdpZHRoOiBwZXJjZW50YWdlKDEgLyA0KSAtICRncm91cERpc3Q7XHJcbiAgfVxyXG5cclxuICAudGh1bWJuYWlsLCB0aHVtYiwgLmltZyB7XHJcbiAgICAmOmhvdmVyIHsgYm9yZGVyOiBub25lOyB9XHJcbiAgfVxyXG5cclxuICBsaSwgLm1lZGlhLWl0ZW0ge1xyXG4gICAgdmlzaWJpbGl0eTogaGlkZGVuO1xyXG4gICAgd2lkdGg6IDEwMCU7XHJcbiAgICBtYXJnaW4tYm90dG9tOiAyMHB4O1xyXG4gICAgcGFkZGluZzogOHB4O1xyXG4gICAgLXdlYmtpdC1ib3gtc2hhZG93OiAwIDAgOHB4ICNjY2M7XHJcbiAgICBib3gtc2hhZG93OiAwIDAgOHB4ICNjY2M7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAjZmZmO1xyXG4gICAgJjpob3ZlciB7XHJcbiAgICAgIGJveC1zaGFkb3c6IDAgMCAxMHB4ICM5OTk7XHJcbiAgICAgIGJhY2tncm91bmQtY29sb3I6ICNmM2YzZjM7XHJcbiAgICB9XHJcbiAgfVxyXG5cclxuICBAZm9yICRpIGZyb20gMiB0aHJvdWdoIDgge1xyXG4gICAgJi5tZWRpYS1jb2wjeyRpfSAuaXRlbXMtZ3JvdXAgeyB3aWR0aDogcGVyY2VudGFnZSgxIC8gJGkpIC0gJGdyb3VwRGlzdDsgfVxyXG4gIH1cclxufSIsIi8vIENsZWFyZml4XG4vL1xuLy8gRm9yIG1vZGVybiBicm93c2Vyc1xuLy8gMS4gVGhlIHNwYWNlIGNvbnRlbnQgaXMgb25lIHdheSB0byBhdm9pZCBhbiBPcGVyYSBidWcgd2hlbiB0aGVcbi8vICAgIGNvbnRlbnRlZGl0YWJsZSBhdHRyaWJ1dGUgaXMgaW5jbHVkZWQgYW55d2hlcmUgZWxzZSBpbiB0aGUgZG9jdW1lbnQuXG4vLyAgICBPdGhlcndpc2UgaXQgY2F1c2VzIHNwYWNlIHRvIGFwcGVhciBhdCB0aGUgdG9wIGFuZCBib3R0b20gb2YgZWxlbWVudHNcbi8vICAgIHRoYXQgYXJlIGNsZWFyZml4ZWQuXG4vLyAyLiBUaGUgdXNlIG9mIGB0YWJsZWAgcmF0aGVyIHRoYW4gYGJsb2NrYCBpcyBvbmx5IG5lY2Vzc2FyeSBpZiB1c2luZ1xuLy8gICAgYDpiZWZvcmVgIHRvIGNvbnRhaW4gdGhlIHRvcC1tYXJnaW5zIG9mIGNoaWxkIGVsZW1lbnRzLlxuLy9cbi8vIFNvdXJjZTogaHR0cDovL25pY29sYXNnYWxsYWdoZXIuY29tL21pY3JvLWNsZWFyZml4LWhhY2svXG5cbkBtaXhpbiBjbGVhcmZpeCgpIHtcbiAgJjpiZWZvcmUsXG4gICY6YWZ0ZXIge1xuICAgIGNvbnRlbnQ6IFwiIFwiOyAvLyAxXG4gICAgZGlzcGxheTogdGFibGU7IC8vIDJcbiAgfVxuICAmOmFmdGVyIHtcbiAgICBjbGVhcjogYm90aDtcbiAgfVxufVxuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9 */
+
+/*# sourceMappingURL=../../../map/blocks/media/media-waterfall/media-waterfall.css.map */

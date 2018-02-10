@@ -1,0 +1,42 @@
+@import "../_list-config";
+
+.list-rank1, .list-rank2 {
+  .list-group-item {
+    padding-left: pxToEm(30px);
+  }
+  .rank-num {
+    position: absolute;
+    left: pxToEm(10px);
+    top: 50%;
+  }
+}
+.list-rank1 {
+  .rank-num {
+    width: 1em;
+    height: 1em;
+    line-height: 1em;
+    margin-top: -.5em;
+    text-align: center;
+    font-size: pxToEm(12px);
+    color: #fff;
+    background-color: #ccc;
+  }
+  .rank1 .rank-num { background-color: #FA4D11; }
+  .rank2 .rank-num { background-color: #FA8411; }
+  .rank3 .rank-num { background-color: #FAC011; }
+}
+.list-rank2 {
+  .rank-num {
+    font-size: pxToEm(18px);
+    height: 1em;
+    line-height: 1;
+    margin-top: -.5em;
+    color: #666;
+    font-family: Arial;
+    font-style: italic;
+    font-weight: bold;
+  }
+  .rank1, .rank2, .rank3 {
+    .rank-num { color: #f0454c; }
+  }
+}

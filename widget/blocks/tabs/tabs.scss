@@ -1,0 +1,23 @@
+@import "tabs-config";
+
+.tabs-base,
+.tabs-nav1,
+.tabs-nav2,
+.tabs-nav3,
+.tabs-nav4 {
+  @include clearfix();
+
+  font-size: pxToEm(16px);
+  > li {
+    float: left;
+    text-align: center;
+    line-height: 3em;
+    & > a {
+      display: block;
+      font-family: "Microsoft YaHei", tahoma, arial, simsun;
+
+      &:hover, &:active, &:focus { text-decoration: none; }
+    }
+    + li a { margin-left: -1px; }
+  }
+}

@@ -1,0 +1,7 @@
+.span3 {width:220px;float:left;margin: 10px;}
+.btn.btn-primary {background-color:#1ABC9C;}
+.btn.btn-info {background-color:#3498DB;}
+.btn.btn-danger {background-color:#E74C3C;}
+.btn.btn-success {background-color:#2ECC71;}
+.btn.btn-warning {background-color:#F1C40F;}
+.btn.disabled, .btn[disabled] {background-color:#95A5A6;color:white;}

@@ -1,0 +1,72 @@
+@import "../_bar-config";
+
+.paging-bar {
+  text-align: center;
+  line-height: 2.8;
+  font-size: 1em;
+  margin: 2em 0;
+  a:hover, a:focus { text-decoration: none; }
+  .paging-list, .paging-form {
+    display: inline-block;
+    @include clearfix();
+  }
+}
+.paging-list a, .paging-form span { float: left; }
+.paging-list {
+  a {
+    width: 3em;
+    background-color: $globalBg;
+    border: 1px solid $grayBorder;
+    + a { margin-left: -1px; }
+    &:hover { background-color: darken($globalBg, 5%); }
+    &.prev, &.next {
+      width: auto;
+      padding: 0 1em;
+    }
+    &.omit, &.omit:hover {
+      margin-left: 0;
+      border: none;
+      background: $body-bg;
+    }
+    &.omit + a { margin-left: 0; }
+
+    &.current, &.current:hover {
+      color: #ffffff;
+      background-color: $activeColor;
+      border-color: $activeColor;
+    }
+  }
+}
+.paging-bar.divide {
+  .paging-list a {
+    margin-right: 1em;
+    &.omit, &.omit:hover {
+      margin-right: 0;
+      margin-left: -1em;
+    }
+  }
+}
+
+.paging-form {
+  > span { margin-left: .5em; }
+  input, button {
+    box-sizing: content-box;
+    border: 1px solid $grayBorder;
+  }
+  input {
+    width: 2em;
+    height: 1.5em;
+    line-height: 1.5;
+    padding: 0 .2em;
+    margin: 0 .2em;
+  }
+  button {
+    height: 1.8em;
+    line-height: 1.8;
+    padding: 0 .8em;
+    background-color: $globalBg;
+    &:hover {
+      background-color: darken($globalBg, 5%);
+    }
+  }
+}

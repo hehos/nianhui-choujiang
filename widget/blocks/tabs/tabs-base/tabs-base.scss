@@ -1,0 +1,15 @@
+@import "../_tabs-config";
+
+.tabs-base {
+  > li {
+    width: 25%;
+    > a { border-bottom: 1px solid $grayBorder; }
+    &.on, &:hover {
+      color: $activeColor;
+      > a {
+        border-bottom-color: $activeColor;
+        border-bottom-width: 2px;
+      }
+    }
+  }
+}

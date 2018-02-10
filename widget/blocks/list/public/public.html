@@ -1,0 +1,66 @@
+<!--css{list/list-link, icon_button/icon_button1}!-->
+
+
+<div class="docs-explain">
+    <h2>帮助说明</h2>
+    <table class="table">
+        <tr><th>className / html代码</th><th>说明</th><th>使用位置</th></tr>
+        <tr>
+            <td>.list-dot</td>
+            <td>生成list条目的 “点” 样式</td>
+            <td>模块最顶级元素</td>
+        </tr>
+        <tr>
+            <td>.list-rank1, .list-rank2</td>
+            <td>生成list条目的 “排序” 样式</td>
+            <td>模块最顶级元素</td>
+        </tr>
+        <tr>
+            <td><code><i><</i>span class="time"<i>></i>2015-07-04 16:08:39<i><</i>/span<i>></i></code></td>
+            <td>生成list条目的 “时间” 样式</td>
+            <td>模块条目(.list-group-item) ”第一个亲生子元素“ 位置</td>
+        </tr>
+        <tr>
+            <td>.active</td>
+            <td>生成条目处于 “活动” 样式</td>
+            <td>模块条目上</td>
+        </tr>
+        <tr>
+            <td>.disabled</td>
+            <td>生成条目 “失效” 样式</td>
+            <td>模块条目上</td>
+        </tr>
+    </table>
+</div>
+
+
+<ul class="list-group list-dot">
+    <li class="list-group-item active"><span class="time">2015-07-04 16:08:39</span>有“点”修饰的条目</li>
+    <li class="list-group-item disabled"><span class="time">2015-07-04 16:08:39</span>Dapibus ac facilisis in</li>
+    <li class="list-group-item"><span class="time">2015-07-04 16:08:39</span>Morbi leo risus</li>
+    <li class="list-group-item">Porta ac consectetur ac</li>
+    <li class="list-group-item">Vestibulum at eros</li>
+</ul>
+
+<ul class="list-group list-dot">
+    <li class="list-group-item list-group-item-success">Dapibus ac facilisis in</li>
+    <li class="list-group-item list-group-item-info">Cras sit amet nibh libero</li>
+    <li class="list-group-item list-group-item-warning">Porta ac consectetur ac</li>
+    <li class="list-group-item list-group-item-danger">Vestibulum at eros</li>
+</ul>
+
+<ul class="list-group list-rank1">
+    <li class="list-group-item rank1"><i class="rank-num">1</i>Cras justo odio</li>
+    <li class="list-group-item rank2"><i class="rank-num">2</i>Dapibus ac facilisis in</li>
+    <li class="list-group-item rank3"><i class="rank-num">3</i>Morbi leo risus</li>
+    <li class="list-group-item"><i class="rank-num">4</i>Porta ac consectetur ac</li>
+    <li class="list-group-item"><i class="rank-num">5</i>Vestibulum at eros</li>
+</ul>
+
+<ul class="list-group list-rank2">
+    <li class="list-group-item rank1"><i class="rank-num">1</i><span class="time">2015-07-04 16:08:39</span>list列表的第一个条目</li>
+    <li class="list-group-item rank2"><i class="rank-num">2</i><span class="time">2015-07-04 16:08:39</span>Dapibus ac facilisis in</li>
+    <li class="list-group-item rank3"><i class="rank-num">3</i><span class="time">2015-07-04 16:08:39</span>Morbi leo risus</li>
+    <li class="list-group-item"><i class="rank-num">4</i><span class="time">2015-07-04 16:08:39</span>Porta ac consectetur ac</li>
+    <li class="list-group-item"><i class="rank-num">5</i><span class="time">2015-07-04 16:08:39</span>Vestibulum at eros</li>
+</ul>

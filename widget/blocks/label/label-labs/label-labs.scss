@@ -1,0 +1,16 @@
+@import "../_label-config";
+
+.label-labs {
+  .label-title {
+    white-space: nowrap;
+    width: auto;
+    margin-right: .5em;
+  }
+  .label-cell {
+    padding: 0 .8em;
+    margin-right: pxToEm(5px);
+    border: 1px solid $grayBorder;
+    border-radius: .8em;
+    background-color: $gray-lightest;
+  }
+}

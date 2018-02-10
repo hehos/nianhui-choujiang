@@ -1,0 +1,38 @@
+@import "../media-config";
+
+// 瀑布流插件
+
+.media-waterfall {
+  $groupDist: 2%;
+  margin-left: -$groupDist;
+  padding: 10px;
+  @include clearfix();
+
+  .items-group {
+    float: left;
+    margin-left: $groupDist;
+    width: percentage(1 / 4) - $groupDist;
+  }
+
+  .thumbnail, thumb, .img {
+    &:hover { border: none; }
+  }
+
+  li, .media-item {
+    visibility: hidden;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px;
+    -webkit-box-shadow: 0 0 8px #ccc;
+    box-shadow: 0 0 8px #ccc;
+    background-color: #fff;
+    &:hover {
+      box-shadow: 0 0 10px #999;
+      background-color: #f3f3f3;
+    }
+  }
+
+  @for $i from 2 through 8 {
+    &.media-col#{$i} .items-group { width: percentage(1 / $i) - $groupDist; }
+  }
+}

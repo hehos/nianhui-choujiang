@@ -1,0 +1,24 @@
+@import "list-config";
+
+/* 组件样式提到组件的公共样式：组件下各种相似类型可能融合的情况 */
+/* 时间 */
+.list-group-item {
+  @include text-truncate();
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  // override bootstrapt
+  border: none;
+
+  margin-bottom: 0;
+  &:first-child, &:last-child { border-radius: 0; }
+
+  .time, .right-info {
+    float: right;
+    color: #999;
+    padding-left: pxToEm(14px);
+  }
+  &.active .time {
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,125 @@
+@import "../_goods-info-config";
+
+.goods-info1 {
+  padding: 22px 23px;
+  border: 1px solid $gray-lighter;
+  .media-wrap {
+    width: percentage(520px / 1150px);
+    margin-right: 43px;
+  }
+  .cont-wrap {
+    display: block;
+    overflow: hidden;
+  }
+  em { color: $activeColor; }
+
+  // media-wrap 部分
+  .big-img {
+    position: relative;
+    margin-bottom: 18px;
+    .ctrl-plus {
+      position: absolute;
+      right: 5px;
+      bottom: 5px;
+      cursor: pointer;
+      padding: .2em .5em;
+      line-height: 1.4;
+      font-size: pxToEm(12px);
+      color: $gray-light;
+      background-color: $body-bg;
+    }
+    i { margin-right: 3px; }
+  }
+  .thumb-wrap {
+    position: relative;
+    margin: 0 30px;
+  }
+  .prev, .next {
+    position: absolute;
+    top: 0;
+    width: 28px;
+    font-size: 30px;
+    text-align: center;
+    color: $gray-light;
+    &:hover { text-decoration: none; }
+  }
+  .prev { left: -30px; }
+  .next { right: -30px; }
+
+  .thumbs {
+    @include clearfix();
+    margin-right: -2%;
+  }
+  .thumb {
+    float: left;
+    width: 23%;
+    margin-right: 2%;
+    &.on, &:hover {
+      outline: 2px solid $activeColor;
+      outline-offset: -2px;
+    }
+  }
+
+  // cont-wrap 部分
+  .safeguard, .labes, .buy-num {
+    color: $gray;
+  }
+  .price-box, .labes, .buy-num {
+    margin: 10px 0;
+  }
+  .title {
+    margin-bottom: .8em;
+    font-size: pxToEm(16px);
+    font-weight: bold;
+  }
+  .text-link {
+    color: $link-color;
+  }
+  .price-box {
+    font-family: "Microsoft YaHei", "Microsoft JhengHei", STHeiti, MingLiu;
+  }
+  .price-num {
+    font-size: pxToEm(20px);
+    color: $activeColor;
+    font-weight: bold;
+    em { font-size: pxToEm(32px, 20px); }
+  }
+  .price-original {
+    margin-left: 10px;
+    color: $gray-light2;
+    text-decoration: line-through;
+  }
+  .chuxiao {
+    font-size: pxToEm(12px);
+    color: $gray-light;
+  }
+
+  .safeguard {
+    background-color: $gray-lightest;
+    border: 1px solid $gray-lighter;
+  }
+  .labes {
+    b { margin-right: 19px; }
+    span { color: $gray-dark; }
+  }
+  .buy-num {
+    font-family: "Microsoft YaHei", "Microsoft JhengHei", STHeiti, MingLiu;
+  }
+  .btn-row {
+    padding-top: 10px;
+    border-top: 1px solid $gray-lighter;
+  }
+  .buy-btn {
+    margin-right: 10px;
+    font-weight: bold;
+    color: $body-bg;
+    background-color: lighten($activeColor, 5%);
+    &:hover { background-color: $activeColor; }
+  }
+  .add-btn {
+    color: $activeColor;
+    border: 1px solid lighten($activeColor, 40%);
+    background-color: $body-bg;
+    &:hover { border-color: $activeColor; }
+  }
+}

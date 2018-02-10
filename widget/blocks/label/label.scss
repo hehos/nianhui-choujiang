@@ -1,0 +1,51 @@
+@import "label-config";
+
+
+.label-bar,
+.label-filter,
+.label-close,
+.label-cate,
+.label-labs {
+  &, & ul { @include clearfix(); }
+  position: relative;
+  line-height: $labelHt * 1em;
+
+  font-size: pxToEm(12px);
+
+  // 和line-height值使.label具有2.4em的有效高度。
+  .label-cell, .label-title, .label-control { margin: .4em 0; }
+  .label-title {
+    display: block;
+  }
+  .layout-left .label-title {
+    margin-left: .5em;
+    margin-right: .5em;
+  }
+  .label-cell {
+    float: left;
+    margin-right: 2em;
+
+    &.on, &:hover { a { color: $activeColor; } }
+  }
+}
+
+.label-bar,
+.label-cate {
+  // 有分割线
+  &.split-line {
+    .label {
+      margin-right: 1em;
+      a { display: inline-block;  }
+      &:before {
+        content: "";
+        height: 1em;
+        margin-right: 1em;
+        margin-top: ($labelHt - 1) / 2 * 1em;
+        border-left: 1px solid $grayBorder;
+      }
+      &:first-child {
+        &:before { display: none; }
+      }
+    }
+  }
+}

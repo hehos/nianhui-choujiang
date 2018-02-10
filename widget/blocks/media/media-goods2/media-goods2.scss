@@ -1,0 +1,44 @@
+@import "../_media-config";
+
+//  使用时的实际布局说明：
+//    1,标题超长省略解决办法：.media-right设置max-width值；或者设置.media-title固定宽度
+
+.media-goods2 {
+  @include media-imgtxt();
+  @include media-horizontal();
+  @include media-goods();
+  .media-body {
+    max-width: 392px;
+  }
+  .media-labels {
+    margin-bottom: .7em;
+    line-height: 1.5;
+  }
+
+  .media-right {
+    width: 30%;
+    line-height: 1.8;
+    padding-left: 2em;
+    color: $gray;
+    font-size: pxToEm(13px);
+    a:hover {
+      color: $activeColor;
+      text-decoration: none;
+    }
+    i { margin-right: .3em; }
+    .icons i { color: $activeColor; }
+  }
+  .media-merch {
+    line-height: 1.2;
+    @include text-truncate();
+    i { color: $linkColor; }
+  }
+
+  .media-labels, .media-sincere {
+    span { display: inline-block; }
+    em {
+      padding: 0 .8em;
+      color: $grayBorder;
+    }
+  }
+}

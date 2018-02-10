@@ -1,0 +1,62 @@
+@import "../_filterbox-config";
+
+
+.filter-box1, .filter-box2 {
+  position: relative;
+  color: $gray;
+  border-bottom: none;
+  font-size: pxToEm(12px);
+
+  // clear depend widget style
+  .location, .filtered { padding: 0; }
+  .label-filter, .label-close { font-size: 1em; }
+
+  .more-type {
+    text-align: center;
+    line-height: 2.6em;
+    margin-top: -1px;
+    a {
+      display: inline-block;
+      padding: 0 1.5em;
+      background-color: $body-bg;
+      border: 1px solid $gray-lighter;
+      border-top: none;
+      &:hover { color: $activeColor; }
+    }
+    i {
+      margin-left: 5px;
+      font-size: 1.4em;
+    }
+    .box-off { display: none; }
+    &.on {
+      .box-on { display: none; }
+      .box-off { display: inline-block; }
+    }
+  }
+}
+
+.filter-head {
+  @include clearfix();
+  line-height: $labelHt * 1em;
+  padding: 1em;
+  .label-cell {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .location, .filtered { float: left; }
+  .location { padding-right: 1.5em; }
+  .right-info {
+    float: right;
+    color: #999;
+    em {
+      color: $activeColor;
+      padding: 0 .3em;
+    }
+  }
+}
+
+.filter-body { border: 1px solid $gray-lighter; }
+.filter-item {
+  border-top: 1px solid $gray-lighter;
+  &:first-child { border-top: none; }
+}

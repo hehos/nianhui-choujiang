@@ -1,0 +1,37 @@
+@import "../_tabs-config";
+
+$activeColor: #ffe2e2;
+.tabs-nav4 {
+  background-color: $gray-lightest;
+  > li {
+    width: 80px;
+    margin-bottom: -1px;
+    border: 1px solid transparent;
+    & + li { border-left-color: $body-bg; }
+    > a { position: relative; }
+    &.on, &:hover {
+      $arrowSize: 8px;
+      $activeColor2: darken($activeColor, 8%);
+      background-color: $activeColor;
+      border-color: $activeColor2;
+      > a {
+        /* 活动导航条目的向下的图标 */
+        &:before, &:after {
+          content: "";
+          position: absolute;
+          left: 50%;
+          margin-left: -$arrowSize;
+        }
+        &:before {
+          z-index: 2;
+          bottom: -($arrowSize - 1px);
+          @include caret-down($arrowSize, $activeColor);
+        }
+        &:after {
+          bottom: -$arrowSize;
+          @include caret-down($arrowSize, $activeColor2);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import "../_media-config";
+
+.media-newsitem {
+  @include media-imgtxt();
+  @include media-horizontal();
+
+//  .media-title { margin-bottom: 1em; }
+  /* 其他辅助 信息样式 */
+  .media-other {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    line-height: 2.2;
+    color: $gray;
+    i { padding-right: .3rem; }
+    .time, .share, .comment { margin-left: 1.1em; }
+    .comment-glyph i { color: $activeColor2; }
+    .share-glyph i { color: $activeColor2; }
+    &.low-right { left: auto; right: 0; }
+  }
+  /* 其他辅助 end */
+
+  /* 分享部分 */
+  .share {
+    @include media-share();
+  }
+}

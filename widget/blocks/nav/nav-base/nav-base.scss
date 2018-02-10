@@ -1,0 +1,57 @@
+@import "../_nav-config";
+
+.nav-base-wrap {
+  margin-top: 15px;
+  border-bottom: 2px solid $activeColor;
+}
+.nav-base {
+  .nav-item {
+    width: percentage(1/7);
+    line-height: 2.6em;
+    font-size: 1.15em;
+    &:before {
+      content: "";
+      height: 1em;
+      float: right;
+      margin-top: (2.6em-1em)/2;
+      border-left: 1px solid #ddd;
+    }
+    &:last-child:before { display: none; }
+    &:hover, &.on {
+      background-color: $activeColor;
+      color: #fff;
+      outline: 1px solid $activeColor;
+    }
+  }
+
+  /* subnav begin*/
+  .has-subnav {
+    .glyphicon {
+      font-size: 1rem;
+      margin-left: .5em;
+    }
+    &:hover .subnav {
+      display: block;
+    }
+  }
+  .subnav {
+    display: none;
+    position: absolute;
+    left: 0;
+    z-index: 1000;
+    width: 100%;
+    padding-top: .5em;
+    padding-bottom: .5em;
+    text-align: center;
+    background-color: darken($activeColor, 5%);
+    li {
+      line-height: 2em;
+      padding-left: .25em;
+      padding-right: .25em;
+      &:hover {
+        background-color: darken($activeColor, 10%);
+      }
+    }
+  }
+  /* subnav end*/
+}

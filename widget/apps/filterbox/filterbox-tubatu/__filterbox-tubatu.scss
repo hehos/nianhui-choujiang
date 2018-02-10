@@ -1,0 +1,16 @@
+@import "../_filterbox-config";
+
+.filter-box2 {
+  .filter-head {
+    border: 1px solid $gray-lighter;
+    border-bottom: none;
+  }
+  .layout-left {
+    text-align: center;
+    background-color: $globalBg;
+    border-right: 1px solid $gray-lighter;
+  }
+  .layout-body {
+    padding-left: 1em;
+  }
+}

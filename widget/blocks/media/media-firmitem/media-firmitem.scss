@@ -1,0 +1,25 @@
+@import "../_media-config";
+
+.media-firmitem{
+  @include media-imgtxt();
+  @include media-horizontal();
+  @include media-btns();
+
+  .media-labels1, .media-labels2 {
+    line-height: 2;
+    font-size: .95em;
+  }
+  .media-labels1 {
+    span {
+      display: block;
+    }
+  }
+  .media-labels2 {
+    @include clearfix();
+    span {
+      float: left;
+      width: 33.3%;
+    }
+    em { color: $activeColor; }
+  }
+}

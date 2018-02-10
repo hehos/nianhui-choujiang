@@ -1,0 +1,12 @@
+@import "../_media-config";
+
+.media-circle {
+  @include media-imgtxt();
+  .media-title {
+    line-height: 2;
+    @include text-truncate();
+  }
+  text-align: center;
+  .thumbnail { border: none; }
+}
+

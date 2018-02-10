@@ -1,0 +1,76 @@
+@import "../_media-config";
+
+.media-goods {
+  @include media-imgtxt();
+  @include media-goods();
+
+  border: 1px solid #ddd;
+  &:hover {
+    /* 跟价格颜色相同 */
+    border-color: $activeColor;
+  }
+  img {
+    width: auto;
+    height: auto;
+  }
+  /* 商品小缩略图 */
+  .img-thumbs {
+    @include clearfix();
+    margin: 8px 8px 0 8px;
+    a {
+      float: left;
+      width: percentage(1/6);
+      padding: 0 1px;
+    }
+    img {
+      width: 100%;
+      height: 2.8em;
+      border: 1px solid #ddd;
+      &:hover { border-color: $activeColor; }
+    }
+  }
+  .media-title {
+    height: 2.8em;
+    overflow: hidden;
+  }
+
+  .mediaCont-wrap {
+    padding-left: .4em;
+    padding-right: .4em;
+  }
+  .media-merch, .media-other {
+    color: #999;
+    font-size: .85em;
+  }
+  .media-merch {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    /* 跟价格颜色相同 */
+    a:hover {
+      color: $activeColor;
+      text-decoration: underline;
+    }
+    span {
+      display: inline-block;
+      padding-left: .7em;
+    }
+  }
+  /* 其他信息的样式。成交量、评价数等 */
+  .media-cells {
+    font-size: pxToEm(12px);
+    border-top: 1px solid #ddd;
+    .cell {
+      display: table-cell;
+      width: 1000px;
+      padding: .5em;
+      vertical-align: middle;
+      white-space: nowrap;
+      + .cell { border-left: 1px solid $grayBorder; }
+    }
+    em {
+      margin-left: 3px;
+      color: #38b; }
+    i { margin-right: 3px; }
+  }
+}

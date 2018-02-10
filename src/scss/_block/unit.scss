@@ -1,0 +1,90 @@
+// 小功能样式
+.bg-img-center {
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-position: center;
+}
+
+// 布局
+.flex {
+  display: flex;
+}
+
+// 颜色原件
+.fc-red { color: $activeColor; }
+.fc-green { color: $linkColor; }
+.fc-primary { color: $primary-color; }
+.fc-secondary { color: $secondary-color; }
+.bg-white { background-color: $white-color; }
+
+// 边框
+.main-border { border: 1px solid $gray-lighter; }
+
+// 元素距离
+// margin-t, margin-r, margin-b, margin-l 表示margin上、右、下、左
+@for $i from 5 through 60 {
+  .margin-#{$i} { margin: ($i / toNum($baseFontSize)) * 1em !important; }
+}
+@for $i from 5 through 60 {
+  .padding-#{$i} { padding: ($i / toNum($baseFontSize)) * 1em !important; }
+}
+
+@for $i from 5 through 60 {
+  .margin-t-#{$i} { margin-top: ($i / toNum($baseFontSize)) * 1em !important; }
+}
+@for $i from 5 through 60 {
+  .margin-r-#{$i} { margin-right: ($i / toNum($baseFontSize)) * 1em !important;; }
+}
+@for $i from 5 through 60 {
+  .margin-b-#{$i} { margin-bottom: ($i / toNum($baseFontSize)) * 1em !important;; }
+}
+@for $i from 5 through 60 {
+  .margin-l-#{$i} { margin-left: ($i / toNum($baseFontSize)) * 1em !important;; }
+}
+// padding-t, padding-r, padding-b, padding-l 表示padding上、右、下、左
+@for $i from 5 through 60 {
+  .padding-t-#{$i} { padding-top: ($i / toNum($baseFontSize)) * 1em !important; }
+}
+@for $i from 5 through 60 {
+  .padding-r-#{$i} { padding-right: ($i / toNum($baseFontSize)) * 1em !important;; }
+}
+@for $i from 5 through 60 {
+  .padding-b-#{$i} { padding-bottom: ($i / toNum($baseFontSize)) * 1em !important;; }
+}
+@for $i from 5 through 60 {
+  .padding-l-#{$i} { padding-left: ($i / toNum($baseFontSize)) * 1em !important;; }
+}
+
+// 功能原件
+[class^="u-"],
+[class*=" u-"] {
+  display: inline-block;
+  font-family: $smallFont;
+}
+
+// 按钮类型
+[class^="u-btn-"],
+[class*=" u-btn-"] {
+  &, &:hover { text-decoration: none; }
+}
+
+// 特殊文字
+[class^="u-word-"],
+[class*=" u-word-"] {
+  $ws: 20px;
+  $ws2: 16px;
+  width: $ws;
+  height: $ws;
+  line-height: $ws - 1px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 12px;
+  &.square {
+    width: $ws2;
+    height: $ws2;
+    line-height: $ws2 - 1px;
+    border-radius: 3px;
+  }
+}

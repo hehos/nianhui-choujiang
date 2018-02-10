@@ -1,0 +1,14 @@
+@import "../_tabs-config";
+
+.tabs-nav1 {
+  > li {
+    width: 25%;
+    > a {
+      //  把边框
+      border: 1px solid $grayBorder;
+    }
+    &.on, &:hover {
+      > a { border-bottom-color: transparent; }
+    }
+  }
+}

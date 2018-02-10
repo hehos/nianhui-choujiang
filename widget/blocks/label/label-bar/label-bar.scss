@@ -1,0 +1,8 @@
+@import "../_label-config";
+
+
+
+.label-bar {
+  @include label-bar();
+}
+

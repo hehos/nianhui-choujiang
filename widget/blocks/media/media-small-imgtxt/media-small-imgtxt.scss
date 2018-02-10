@@ -1,0 +1,21 @@
+@import "../_media-config";
+
+.media-small-imgtxt {
+  @include clearfix();
+  .img {
+    float: left;
+    width: pxToEm(42px);
+    margin-right: 1em;
+    height: pxToEm(42px);
+    line-height: middleImg(42px, 2px);
+    border: 1px solid $gray-lighter;
+  }
+  .media-title {
+    margin-bottom: .4em;
+    @include text-truncate();
+  }
+  p, .media-explain {
+    color: $gray-light;
+    margin-bottom: 0;
+  }
+}

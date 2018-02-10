@@ -1,0 +1,9 @@
+.nav1{background:#105FC9;height:40px;position:relative;z-index:1;}
+.nav1 .sub{display:none;top:40px;position:absolute;}
+.nav1 .sub a{display:block;font-size:12px;height:30px;line-height:30px;}
+.nav1 .sub a:hover{background:#1F76ED;color:#fff;}
+.nav1 .sub li{height:30px;padding:0;}
+.nav1 li {float:left;position:relative;height:40px;line-height:40px;}
+.nav1 li a{color:#fff;font-size:12px;padding:0 28px;  text-align:center;display:block;width:60px;height:inherit;word-wrap:break-word;overflow:hidden;}
+.nav1 li:hover{background:#0F57B9;}
+.nav1 li:hover .sub{display:block;background:#0F57B9;}

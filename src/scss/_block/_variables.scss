@@ -1,0 +1,62 @@
+// theme widths
+$base-width:                1200px !default;    // 页面宽度
+$base-width-num:            1200 !default;      // 页面宽度无单位
+
+// =========================================
+// color
+
+$base-color:                #404040 !default;   // 基础颜色
+$black-color:               #000000 !default;   // 黑色
+$white-color:               #ffffff !default;   // 白色
+
+// gray
+$gray-dark:                 #666666 !default;   // 较深的灰色
+$gray:                      #808080 !default;   // 灰色
+$gray-light:                #999999 !default;   // 较浅的灰色
+$gray-lighter:              #eeeeee !default;   // 很浅的灰色
+$gray-lightest:             #f5f5f5 !default;   // 最浅的灰色
+
+// theme colors
+$primary-color:             #cc0d1d !default;   // 主要颜色
+// todo  这里有待商讨，有第二种或者第三种主要颜色的情况暂时想不到真实的环境
+$primary-color2:            $black-color !default; // 主要颜色
+$primary-color3:            $gray-dark !default;   // 主要颜色：主要体现在文本上
+
+$secondary-color:           #f25619 !default;   // 辅助颜色
+
+// background colors
+$global-bg:                 $gray-lightest !default;  // 全局背景色
+
+// border colors
+$border-color:              #dddddd !default;   // 边框颜色
+$border-light-color:        $gray-lighter !default; // 较浅的边框颜色
+
+// link color
+$link-color:                $base-color !default; // 通用链接颜色
+$link-weak-color:           $gray !default;       // 弱化链接颜色
+$link-light-color:          $secondary-color !default;       // 强化链接颜色
+$link-hover-color:          $primary-color;      // 链接点击/移上效果
+
+// status colors
+$status-primary:            #0275d8 !default;   // 默认状态颜色
+$status-success:            #5cb85c !default;   // 成功状态颜色
+$status-info:               #5bc0de !default;   // 提示状态颜色
+$status-warning:            #f0ad4e !default;   // 警告状态颜色
+$status-danger:             #d9534f !default;   // 危险状态颜色
+
+// Z-index master list
+$zindex-navbar:            1000 !default;
+$zindex-dropdown:          1000 !default;
+$zindex-popover:           1060 !default;
+$zindex-tooltip:           1070 !default;
+$zindex-navbar-fixed:      1030 !default;
+$zindex-navbar-sticky:     1030 !default;
+$zindex-modal-bg:          1040 !default;
+$zindex-modal:             1050 !default;
+
+
+
+
+// ===========================================================
+// 兼容之前的 _variables.scss
+$activeColor:               $primary-color;

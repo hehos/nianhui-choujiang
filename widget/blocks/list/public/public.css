@@ -1,0 +1,61 @@
+.list-dot .list-group-item {
+  padding-left: 1.4em;
+}
+.list-dot .list-group-item:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: .7em;
+  top: 50%;
+  width: .2em;
+  height: .2em;
+  margin-top: -1px;
+  background-color: #666;
+}
+.list-dot .list-group-item.active:before {
+  background-color: #fff;
+}
+.list-rank1 .list-group-item,
+.list-rank2 .list-group-item {
+  padding-left: 2.14285714em;
+}
+.list-rank1 .rank-num,
+.list-rank2 .rank-num {
+  position: absolute;
+  left: 0.71428571em;
+  top: 50%;
+}
+.list-rank1 .rank-num {
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  margin-top: -0.5em;
+  text-align: center;
+  font-size: 0.85714286em;
+  color: #fff;
+  background-color: #ccc;
+}
+.list-rank1 .rank1 .rank-num {
+  background-color: #FA4D11;
+}
+.list-rank1 .rank2 .rank-num {
+  background-color: #FA8411;
+}
+.list-rank1 .rank3 .rank-num {
+  background-color: #FAC011;
+}
+.list-rank2 .rank-num {
+  font-size: 1.28571429em;
+  height: 1em;
+  line-height: 1;
+  margin-top: -0.5em;
+  color: #666;
+  font-family: Arial;
+  font-style: italic;
+  font-weight: bold;
+}
+.list-rank2 .rank1 .rank-num,
+.list-rank2 .rank2 .rank-num,
+.list-rank2 .rank3 .rank-num {
+  color: #f0454c;
+}

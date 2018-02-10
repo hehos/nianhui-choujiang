@@ -1,0 +1,20 @@
+@import "../_tabs-config";
+
+.tabs-nav2 {
+  border-bottom: 1px solid $grayBorder;
+  background-color: $themeBg;
+  > li {
+    width: 80px;
+    margin-bottom: -1px;
+    > a {
+      border: 1px solid transparent;
+    }
+    &.on, &:hover {
+      background-color: $themeBg;
+      > a {
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+      }
+    }
+  }
+}

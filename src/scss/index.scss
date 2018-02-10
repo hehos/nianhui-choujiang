@@ -1,0 +1,371 @@
+@import "_block/variables";
+@import "_block/mixins";
+// Common style
+
+@import "_block/normalize.css";
+@import "_block/reset";
+
+body {
+  background: #b50032;
+}
+#app {
+  color: yellow;
+  font-weight: bold;
+}
+
+
+.el-select-dropdown {
+  background-color: #000;
+  .el-select-dropdown__item {
+    color: #fffdfc;
+    &.hover {
+      background-color: #666;
+    }
+  }
+}
+.el-popper .popper__arrow::after {
+  border-width: 5px;
+}
+.el-input-number {
+  width: 100%;
+}
+.el-input-number__decrease, .el-input-number__increase {
+  background-color: #b50032;
+  color: #fffdfc;
+}
+
+.top-menu {
+  position: absolute;
+  top: 20px;
+  z-index: 1000;
+  width: 100%;
+  text-align: center;
+  border-bottom: none;
+  .el-menu-item {
+    float: none;
+    display: inline-block;
+    padding: 0 30px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: #ffde00 !important;
+    color: #d00002 !important;
+    & + .el-menu-item {
+      margin-left: -4px;
+    }
+    &.is-active {
+      color: #FFFFFF !important;
+      background-color: #ff6600 !important;
+      border-bottom: none;
+    }
+  }
+}
+
+
+.main_bg {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background: url("../images/bg.jpg") center top no-repeat;
+  height: 100%;
+  padding-top: 61px;
+}
+
+
+.main {
+  width: 1200px;
+  height: 100%;
+  position: relative;
+  margin: 0 auto;
+
+  .jh-wrap,
+  .cj-wrap,
+  .dm-wrap {
+    padding-top: 50px;
+    padding-bottom: 170px;
+    height: 100%;
+    overflow: au;
+  }
+
+  .cj-res-grade-title,
+  .jh-title {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .result-box {
+    @include clearfix();
+    margin: auto;
+    width: 100%;
+  }
+
+  .result-user {
+    display: flex;
+    align-items: center;
+    line-height: 60px;
+    font-size: 20px;
+    @include clearfix();
+    .name {
+      line-height: 1.4;
+      display: block;
+    }
+    img {
+      float: left;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+    & + .result-user {
+      margin-top: 10px;
+    }
+  }
+
+  .start-btn,
+  .restart-btn {
+    position: absolute;
+    cursor: pointer;
+    color: #FFFFFF;
+    z-index: 8888;
+  }
+  .start-btn {
+    left: 50%;
+    bottom: 50px;
+    margin-left: -132px;
+    width: 264px;
+    height: 89px;
+    clear: both;
+    line-height: 80px;
+    font-weight: bold;
+    text-align: center;
+    font-size: 30px;
+    background: url(../images/btn_start.png) 0px 0px no-repeat;
+    &.disabled {
+      opacity: .65;
+      pointer-events: none;
+    }
+  }
+  .restart-btn {
+    bottom: 80px;
+    left: 50%;
+    padding: 5px 15px;
+    margin-left: 150px;
+    border: 1px solid #999;
+    border-radius: 15px;
+    color: #bbb;
+    &:hover {
+      color: #eee;
+    }
+  }
+
+  // 设置功能样式
+  .setting {
+    width: 100px;
+    position: fixed;
+    left: 20px;
+    top: 100px;
+    .setting-title {
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    .el-input__inner {
+      background: transparent;
+      color: #fffdfc;
+    }
+  }
+}
+
+// 交换礼物
+.jh-wrap {
+  position: relative;
+
+  .result-box {
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 170px;
+    margin-top: 20px;
+    overflow: auto;
+  }
+  .res-step-item {
+    @include clearfix();
+    .step-title {
+      font-size: 20px;
+    }
+    & + .res-step-item {
+      .step-title {
+        margin-top: 15px;
+      }
+    }
+  }
+  .result-item {
+    float: left;
+    width: 33.3%;
+    padding: 15px;
+    margin-top: 10px;
+    border: 1px solid #a00732;
+    background-color: #b50032;
+  }
+}
+
+// 抽奖
+.cj-wrap {
+
+  .setting {
+    .grade-item-title {
+      margin-bottom: 5px;
+    }
+    .grades {
+      width: 100px;
+      @include clearfix();
+    }
+    .grade-item {
+      & + .grade-item {
+        margin-top: 10px;
+      }
+      //float: left;
+      //width: 33.3%;
+    }
+  }
+
+  .num_mask,
+  .num_box {
+    position: absolute;
+    left: 50%;
+    top: 240px;
+    width: 560px;
+    margin-left: -280px;
+  }
+
+  .num_mask {
+    background: url("../images/num_mask.png") 0px 0px no-repeat;
+    height: 184px;
+    z-index: 9;
+  }
+
+  .num_box {
+    z-index: 8;
+    overflow: hidden;
+    text-align: center;
+    background: url(../images/num-box-bg.png) top left no-repeat;
+  }
+
+  .num {
+    background: url(../images/num.png) top center repeat-y;
+    width: 180px;
+    height: 265px;
+    float: left;
+    margin-right: 6px;
+  }
+
+  .cj-res-show {
+    height: 100%;
+    overflow: auto;
+    @include clearfix();
+  }
+  .grade-title-box,
+  .grade-box {
+    @include clearfix();
+  }
+
+  .res-grade,
+  .cj-res-grade-title {
+    float: left;
+    width: 20%;
+    background-color: #d00002;
+  }
+
+  .cj-res-grade-title {
+    line-height: 40px;
+    & + .cj-res-grade-title {
+      border-left: 1px solid #ddd;
+    }
+  }
+  .grade-users {
+    overflow: auto;
+    padding: 10px;
+    @include clearfix();
+  }
+  .winning-item {
+    padding: 5px 10px;
+    line-height: 40px;
+    img {
+      width: 40px;
+      height: 40px;
+    }
+    & + .result-user {
+      margin-top: 10px;
+    }
+  }
+  .res-grade:nth-child(1) {
+    .winning-item {
+      line-height: 70px;
+      img {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+  .res-grade:nth-child(2) {
+    .winning-item {
+      line-height: 60px;
+      img {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+  .res-grade:nth-child(3) {
+    .winning-item {
+      line-height: 50px;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
+
+
+// 点名
+.dm-wrap {
+  .dm-result {
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+    font-size: 40px;
+    font-size: 20px;
+    margin-top: 10px;
+    padding: 30px 20px;
+    @include clearfix();
+    .result-user {
+      margin: 20px 10px;
+      float: left;;
+    }
+    .zhunbei-text {
+      font-size: 30px;
+    }
+  }
+  .gun-user-result {
+    height: 100%;
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 18px;
+    overflow: hidden;
+    .gun-user {
+      font-size: 40px;
+      width: 100%;
+    }
+  }
+  .dm-result-info {
+    margin-top: 100px;
+    background-color: #b50032;
+  }
+  .res-user {
+    margin: 15px;
+  }
+}

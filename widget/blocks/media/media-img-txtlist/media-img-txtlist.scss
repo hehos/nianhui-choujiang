@@ -1,0 +1,19 @@
+@import "../_media-config";
+
+.media-img-txtlist {
+  @include clearfix();
+  .img {
+    float: left;
+    margin-right: 1em;
+    margin-top: .5em;
+  }
+
+  .txtlist {
+    line-height: 2;
+    overflow: hidden;
+    li {
+      display: block;
+      @include text-truncate();
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import "media-config";
+
+/* 修复父元素display: table-cell;时，图片子元素max-width属性值为百分比单位的问题 */
+.media-left, .media-right, .media-body {
+  img {  max-width: none; }
+}
+.media-body {
+  position: relative;
+  overflow: visible;
+}
+
+.media-base,
+.media-circle,
+.media-goods,
+.media-goods2,
+.media-newsitem,
+.media-firmitem,
+.media-big-img,
+.media-small-imgtxt {
+  $offset: 3px; // 图集类型时图片的距离
+
+  margin-bottom: 20px;
+  position: relative;
+
+  p, h4, h5, h6 { margin: 0; }
+  p, .media-explain {
+    margin-bottom: .3em;
+    color: $gray;
+  }
+  h4, h5, h6 { font-size: inherit; }
+
+  /* clear bootstrap style and add property */
+  .thumbnail {
+    border-radius: 0;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  .tran-layer {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding-left: .6em;
+    padding-right: .6em;
+    margin-bottom: 0;
+    color: #ffffff;
+    @include background-color-rgba(#000, .7);
+    a:hover { color: inherit; }
+    .media-explain { color: darken($gray-lighter, 10%); }
+  }
+  .media-title {
+    display: block;
+    line-height: 1.4;
+    font-size: pxToEm(15px);
+    font-family: "Microsoft YaHei", "Microsoft JhengHei", STHeiti, MingLiu;
+  }
+
+  .media-btn {
+    position: absolute;
+    bottom: pxToEm(30px);
+    right: pxToEm(15px);
+  }
+
+  // 时间
+  .media-time, .time { color: $gray-light; }
+
+  // 图集类型
+  .photos {
+    position: relative;
+    border-right: $offset solid transparent;
+    border-bottom: $offset solid transparent;
+    .thumbnail, .img {
+      width: 100%;
+      &:first-child {
+        position: absolute;
+        top: $offset;
+        left: $offset;
+        z-index: -1;
+      }
+    }
+  }
+}

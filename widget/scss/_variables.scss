@@ -1,0 +1,38 @@
+@import "../libs/bootstrap4/scss/variables";
+
+
+// Color
+//
+// orange
+$orange-dark:                   #fb7834 !default;
+
+
+// theme color var
+$globalBg:                      #f8f8f8 !default;
+$themeBg:                       $body-bg !default;
+$activeColor:                   #bd0401 !default;
+$activeColor2:                  #91b81d !default;
+$linkColor:                     $activeColor2 !default;
+$btnColor:                      #fd8a17 !default;
+
+// gray
+$gray2:                         #666 !default;
+$gray-light2:                   #999999 !default;
+$grayBorder:                    #dddddd !default;
+$grayBdLight:                   $gray-lighter !default;
+
+// font-size
+$baseFontSize:                  $font-size-root !default;
+
+$font-size-h1:                  2em !default;
+$font-size-h2:                  1.8em !default;
+$font-size-h3:                  1.6em !default;
+$font-size-h4:                  1.4em !default;
+$font-size-h5:                  1.2em !default;
+$font-size-h6:                  1em !default;
+
+// font-family    \5b8b\4f53   是宋体
+$smallFont:                     "\5b8b\4f53", serif !default;
+
+
+

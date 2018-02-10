@@ -1,0 +1,42 @@
+@import "../_bar-config";
+
+.breadcrumb, .breadcrumb-arrow, .breadcrumb-vertical {
+  @include clearfix();
+  padding: 8px 0;
+  background-color: transparent;
+  margin-bottom: 0;
+  border-radius: 0;
+
+  li {
+    float: left;
+    &.on { color: $activeColor; }
+    &.result {
+      padding-left: 3em;
+      &:before { display: none; }
+      em { color: $activeColor; }
+    }
+    & + li:before {
+      content: "/";
+      text-align: center;
+      font-family: "\5b8b\4f53";
+    }
+  }
+}
+
+.breadcrumb-arrow, .breadcrumb-vertical {
+  li + li:before {
+    color: #ccc;
+    padding: 0 5px;
+  }
+}
+
+.breadcrumb-arrow {
+  li + li:before { content: ">"; }
+}
+
+.breadcrumb-vertical {
+  li + li:before { content: "|"; }
+}
+
+
+

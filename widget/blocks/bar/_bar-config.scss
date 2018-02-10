@@ -1,0 +1,94 @@
+@import "../../scss/_variables";
+@import "../../scss/_mixins";
+// 变量
+
+
+// title-bar 标题栏
+@mixin title-bar-base() {
+  $ht: 3.2em;
+  $bb: 2px;
+
+  @include clearfix();
+  line-height: $ht;
+  // 清除框架样式
+  .title, .subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "microsoft yahei", simsun;
+  }
+  .title,
+  .subtitle {
+    float: left;
+    line-height: inherit;
+  }
+  .subtitle,
+  .title-nav,
+  .other-info { padding-left: 1.5em; }
+  .title-nav {
+    @include clearfix();
+    color: $gray2;
+    li {
+      float: left;
+      padding: 0 ;
+      a { padding: 0 1em; }
+    }
+  }
+  .title {
+    font-size: pxToEm(16px);
+  }
+  .subtitle {
+    font-size: pxToEm(15px);
+  }
+  .more {
+    float: right;
+    margin-left: 2em;
+    color: $gray-light2;
+    i {
+      display: inline-block;
+      margin-left: .2em;
+      font-size: 1.2em;
+    }
+  }
+  .other-info {
+    $fs: 12px;
+    color: $gray-light2;
+    font-size: pxToEm($fs);
+
+    $mt: .8em;
+    margin-top: $mt;
+    // 减去$bb(2px)表示不撑开下边框。
+    line-height: ($baseFontSize * toNum($ht) - $bb) / $fs * 1em - $mt;
+  }
+  // fontsize
+  &.fs1 .title {
+    font-size: $font-size-h3;
+  }
+  &.fs2 .title {
+    font-size: $font-size-h4;
+  }
+  // 3 种style
+  &.style1 {
+    border-bottom: $bb solid $activeColor;
+  }
+  &.style2 {
+    border-bottom: $bb solid $activeColor;
+    .title {
+      padding: 0 .5em;
+      background-color: $activeColor;
+      color: #ffffff;
+    }
+  }
+  &.style3 {
+    .title:before {
+      content: "";
+      display: inline-block;
+      height: 1em;
+      width: 6px;
+      margin-right: .5em;
+      vertical-align: middle;
+      margin-bottom: .2em;  // 修复垂直不严格居中问题。
+      border-radius: 2px;
+      background-color: $activeColor;
+    }
+  }
+}

@@ -1,0 +1,119 @@
+@import "../_label-config";
+
+.label-filter {
+  @include label-bar();
+
+  .layout-left, .layout-body, .layout-right {
+    padding-top: .4em;
+    padding-bottom: .4em;
+  }
+  .label-title { border-top: 1px solid transparent; }
+  .label-cell {
+    a {
+      display: block;
+      position: relative;
+      padding-left: 3px;
+      padding-right: 1.2em;
+      border: 1px solid transparent;
+    }
+    &.selected {
+      a {
+        border: 1px solid $activeColor;
+        &:after {
+          content: "×";
+          position: absolute;
+          right: 2px;
+          font-family: $smallFont;
+          color: $activeColor;
+        }
+      }
+    }
+  }
+  .layout-right { padding-right: 1em; }
+  .checkbox-btn-box, .label-control {
+    a {
+      display: inline-block;
+      margin-left: .5em;
+      line-height: 1.6;
+      margin-top: ($labelHt - 1.6) / 2 * 1em;
+      padding: 0 3px;
+      color: $gray;
+      border: 1px solid $grayBorder;
+      &:first-child { margin-left: 0; }
+      i { margin-left: 2px; }
+      &.on, &:hover {
+        color: $activeColor;
+        border-color: $activeColor;
+        text-decoration: none;
+      }
+    }
+  }
+  .label-control {
+    @include clearfix();
+    &, a { white-space: nowrap; }
+    .label-off { display: none; }
+    &.on {
+      .label-off { display: inline-block; }
+      .label-on { display: none; }
+    }
+  }
+  .checkbox-btn-box {
+    text-align: center;
+    margin: 1em 0;
+    .label-confirm, .label-cancel {
+      padding: 0 pxToEm(10px);
+    }
+    .label-confirm {
+      color: $body-bg;
+      background-color: $activeColor;
+      border-color: $activeColor;
+      &:hover { color: $body-bg; }
+    }
+  }
+
+  &.colors, &.colors2 {
+    .label-cell {
+      cursor: pointer;
+      opacity: .6;
+      border: 1px solid darken($gray-lighter, 3%);
+      + .label-cell {
+        border-left: none;
+        margin-left: -1px;
+      }
+      a {
+        border: none;
+        display: block;
+      }
+      &.cl1 { background-color: #FFFFFF; }
+      &.cl2 { background-color: #fefbc8; }
+      &.cl3 { background-color: #c2f8fa; }
+      &.cl4 { background-color: #a98042; }
+      &.cl5 { background-color: #fbf71a; }
+      &.cl6 { background-color: #000000; }
+      &.cl7 { background-color: #19bd1e; }
+      &.cl8 { background-color: #fc0d13; }
+      &.cl9 { background-color: #0000fe; }
+      &.cl10 { background-color: #bebdbb; }
+      &.cl11 { background-color: #a85706; }
+      &.cl12 { background-color: #c53fec; }
+      &.cl13 { background-color: #f48d28; }
+      &.cl14 { background-color: #ffc0cb; }
+      &:hover { opacity: 1; }
+      &:before {
+        display: inline-block;
+        content: "";
+        width: 40px;
+      }
+    }
+  }
+  &.colors {
+    .label-cell {
+      line-height: 1.4em;
+      margin-top: .7em;
+      margin-right: 0;
+    }
+  }
+  &.colors2 {
+    .label-cell { margin-right: pxToEm(10px); }
+  }
+}

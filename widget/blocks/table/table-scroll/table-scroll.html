@@ -1,0 +1,103 @@
+<h3>表格内容滚动</h3>
+<div class="scroll-wrap">
+    <table class="scroll-head table table-hover"></table>
+    <div class="scroll-box"  style="position: relative; overflow:hidden;">
+        <div class="scroll-src-box">
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th>楼盘名称</th>
+                    <th>定制类型</th>
+                    <th>申请业主</th>
+                    <th>申请日期</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>成都市金牛区地中海楼盘1</td><td>住宅公寓</td><td>小李</td><td>8月20日</td>
+                </tr>
+                <tr>
+                    <td>成都市金牛区地中海楼盘2</td><td>住宅公寓</td><td>小李</td><td>8月20日</td>
+                </tr>
+                <tr>
+                    <td>成都市金牛区地中海楼盘3</td><td>住宅公寓</td><td>小李</td><td>8月20日</td>
+                </tr>
+                <tr>
+                    <td>成都市金牛区地中海楼盘4</td><td>住宅公寓</td><td>小李</td><td>8月20日</td>
+                </tr>
+                <tr style="background-color: #00b3ee;">
+                    <td>成都市金牛区地中海楼盘5</td><td>住宅公寓</td><td>小李</td><td>8月20日</td>
+                </tr>
+                <tr>
+                    <td>成都市金牛区地中海楼盘6</td><td>住宅公寓</td><td>小李</td><td>8月20日</td>
+                </tr>
+                <tr>
+                    <td>成都市金牛区地中海楼盘7</td><td>住宅公寓</td><td>小李</td><td>8月20日</td>
+                </tr>
+                <tr>
+                    <td>成都市金牛区地中海楼盘8</td><td>住宅公寓</td><td>小李</td><td>8月20日</td>
+                </tr>
+                <tr>
+                    <td>成都市金牛区地中海楼盘9</td><td>住宅公寓</td><td>小李</td><td>8月20日</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="scroll-copy-box"></div>
+    </div>
+</div>
+
+<style>
+    .cont-row {
+        line-height: 20px;
+    }
+</style>
+<h3>普通元素滚动</h3>
+<div class="scroll-wrap2" style="position: relative; overflow:hidden;">
+    <div class="scroll-src-box">
+        <div class="cont-row">第1行内容</div>
+        <div class="cont-row">第2行内容</div>
+        <div class="cont-row">第3行内容</div>
+        <div class="cont-row">第4行内容</div>
+        <div class="cont-row">第5行内容</div>
+        <div class="cont-row">第6行内容</div>
+        <div class="cont-row">第7行内容</div>
+        <div class="cont-row">第8行内容</div>
+        <div class="cont-row">第9行内容</div>
+    </div>
+    <div class="scroll-copy-box"></div>
+</div>
+
+<h3>单行滚动（适合手机端）</h3>
+<div class="scroll-wrap3" style="position: relative; overflow:hidden;">
+    <div class="scroll-src-box">
+        <div class="cont-row">第1行内容</div>
+        <div class="cont-row">第2行内容</div>
+        <div class="cont-row">第3行内容</div>
+        <div class="cont-row">第4行内容</div>
+        <div class="cont-row">第5行内容</div>
+        <div class="cont-row">第6行内容</div>
+        <div class="cont-row">第7行内容</div>
+        <div class="cont-row">第8行内容</div>
+        <div class="cont-row">第9行内容</div>
+    </div>
+    <div class="scroll-copy-box"></div>
+</div>
+
+<script src="//cdn.bootcss.com/jquery/3.1.1/jquery.min.js"></script>
+<script src="scroll-vertical.js"></script>
+<script>
+    $(function () {
+        $(".scroll-wrap").scrollVertical();
+
+        $(".scroll-wrap2").scrollVertical();
+
+        $(".scroll-wrap3").scrollVertical({
+            animate: 1,
+            rows: 1
+        });
+    });
+
+
+
+</script>

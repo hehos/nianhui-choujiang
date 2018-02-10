@@ -1,0 +1,11 @@
+@import "../_media-config";
+
+.media-base {
+  .media-title {
+    @include text-truncate();
+    line-height: 2;
+  }
+}
+
+
+

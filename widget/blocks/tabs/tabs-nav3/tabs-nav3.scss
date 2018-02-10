@@ -1,0 +1,28 @@
+@import "../_tabs-config";
+
+.tabs-nav3 {
+  border-top: 2px solid $grayBorder;
+  border-bottom: 1px solid $grayBorder;
+  background-color: $gray-lighter;
+  > li {
+    width: 80px;
+    margin-bottom: -1px;
+    &.on, &:hover {
+      background-color: $themeBg;
+      > a {
+        position: relative;
+        border-top: 2px solid $activeColor;
+        margin-top: -2px;
+        /* 活动导航条目的向下的图标 */
+        &:before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          margin-left: -5px;
+          @include caret-down(5px, $activeColor);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+@import "../_bar-config";
+
+.filter-bar {
+  $height: pxToEm(40px,12px);  // 组件高度为40px
+  @include clearfix();
+  line-height: $height;
+  border: 1px solid $gray-lighter;
+  background-color: $globalBg;
+  font-size: pxToEm(12px);
+  color: $gray-dark;
+  a:hover, a:focus { text-decoration: none; }
+
+  // -----------------------------
+  // 生成字体图标的i标签的样式。
+  i {
+    vertical-align: middle;
+    color: $gray-light;
+    font-size: pxToEm(16px);
+  }
+  .filter-sort, .filter-select { i { margin-left: .3em; }}
+  .filter-check i { margin-right: .3em; }
+
+  // ==============================
+  // 小块的组合样式。
+  // 每个小块添加左右边框
+  .filter-sort,
+  .filter-check,
+  .filter-select,
+  .filter-input,
+  .show-pattern,
+  .filter-page {
+    border: solid $gray-lighter;
+    border-width: 0 1px;
+  }
+
+  // 左浮动的小块。  margin-left: -1px;是抵消两个像素的边框值
+  .filter-sort,
+  .filter-check,
+  .filter-select,
+  .filter-input{
+    float: left;
+    margin-left: -1px;
+  }
+
+  // 右浮动的小块
+  .show-pattern,
+  .filter-page {
+    float: right;
+    margin-right: -1px;
+    i { color: $gray-light; }
+  }
+
+  // 小块子元素为li的样式
+  .filter-sort,
+  .filter-check,
+  .filter-select,
+  .show-pattern {
+    @include clearfix();
+    > li {
+      float: left;
+      padding: 0 .8em;
+      + li { border-left: 1px solid $gray-lighter; }
+    }
+  }
+  .filter-sort,
+  .filter-check,
+  .show-pattern {
+    > li {
+      &:hover, &.on {
+        > a { color: $activeColor; }
+        i { color: inherit; }
+      }
+    }
+  }
+  
+  .filter-sort,
+  .show-pattern {
+    > li {
+      &.on {
+        background-color: $body-bg;
+      }
+    }
+  }
+
+  // ========================
+  // 各个小块的单独样式。
+  .filter-select{
+    >li {
+      position: relative;
+      &:hover {
+        background-color: $body-bg;
+        > a { color: $activeColor; }
+        i { color: inherit; }
+        .dropdown-opts { display: block; }
+      }
+    }
+  }
+  .dropdown-opts {
+    box-sizing: content-box;
+    display: none;
+    position: absolute;
+    left: 0;
+    top: pxToEm(40px);
+    z-index: 10;
+    width: 100%;
+    line-height: 2.2;
+    padding: .3em 0;
+    margin-left: -1px;
+    text-align: center;
+    background-color: $body-bg;
+    border: 1px solid $gray-lighter;
+    border-top: none;
+    a {
+      display: block;
+      padding: 0 .3em;
+      &:hover, &.on {
+        color: $activeColor;
+        background-color: $globalBg;
+      }
+    }
+  }
+  .show-pattern {
+    .show-window, .show-rowlist {
+      font-size: 18em/14;
+    }
+  }
+
+  .filter-page {
+    .arrow-left, .arrow-right {
+      padding: 0 .6em;
+      display: inline-block;
+    }
+    .page-num { vertical-align: middle; }
+    i { font-size: pxToEm(24px); }
+  }
+
+  .filter-input {
+    padding: 0 1em;
+    &.on { background-color: $body-bg; }
+    input, button {
+      box-sizing: content-box;
+      height: $height/2;
+      line-height: $height/2;
+      padding: 0 .3em;
+      margin: 0 .3em;
+      font-family: Arial;
+    }
+    input {
+      width: 3em;
+      border: 1px solid $gray-lighter;
+      &.short-input { width: 2em; }
+    }
+    .confirm {
+      display: none;
+      border: 1px solid $activeColor;
+      color: $activeColor;
+      background-color: $body-bg;
+    }
+  }
+}

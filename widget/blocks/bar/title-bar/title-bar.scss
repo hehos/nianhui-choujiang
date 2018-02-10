@@ -1,0 +1,6 @@
+@import "../_bar-config";
+
+
+.title-bar {
+  @include title-bar-base();
+}

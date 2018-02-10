@@ -1,0 +1,81 @@
+@import "../_slider-config";
+
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+
+  .items {
+    @include clearfix();
+    position: relative;
+    left: 0;
+    >li, .item {
+      float: left;
+      position: relative;
+    }
+  }
+  .title, .item-cont {
+    position: absolute;
+    bottom: 0;
+    color: $body-bg;
+    @include background-color-rgba(#000, .7);
+  }
+  .title {
+    @include text-truncate();
+    width: 100%;
+    line-height: 2;
+    padding: 0 10px;
+  }
+  .item-cont .title {
+    position: relative;
+    background-color: transparent;
+    color: inherit;
+  }
+  .dots {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 20px;
+    text-align: center;
+  }
+  .dot {
+    display: inline-block;
+    zoom: 1;
+    width: 10px;
+    height: 10px;
+    line-height: 10px;
+    margin: 0 4px;
+    text-indent: -999em;
+    border: 2px solid #fff;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: .4;
+    -webkit-transition: background .5s, opacity .5s;
+    -moz-transition: background .5s, opacity .5s;
+    transition: background .5s, opacity .5s;
+    &.active {
+      background: #fff;
+      opacity: 1;
+    }
+  }
+  .arrows {
+  }
+  .arrow {
+    position: absolute;
+    top: 50%;
+    z-index: 1000;
+    width: 40px;
+    height: 80px;
+    line-height: 80px;
+    margin-top: -40px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 3em;
+    font-family: $smallFont;
+    color: #fff;
+    @include background-color-rgba(#000, .6);
+    &.prev { left: 0; }
+    &.next { right: 0; }
+  }
+}

@@ -1,0 +1,72 @@
+.unit-zby {
+	float: left;
+	width: 450px;
+	height: 180px;
+	margin: 0px;
+	border: 1px solid #CCC;
+}
+.unit-zby .name {
+	height: 30px;
+	padding-left: 20px;
+	color: #333;
+	background-color: #DCEDC9;
+	background-repeat: repeat;
+	line-height: 30px;
+	font-weight: bold;
+}
+
+.m-zby-bd {
+	padding-top: 10px;
+	padding-left: 10px;
+}
+.m-zby-bd .txtlist-lg{
+ font-size:12px; 
+    float: left;
+	width: 270px;
+    height: 112px;
+    overflow: hidden;
+}
+.m-zby-bd .txtlist-lg a {
+
+    float: left;
+    margin: 10px 0px 6px -1px;
+    padding: 0px 9px;
+    line-height: 1;
+    border-left: 1px solid #E1E1E1;
+    white-space: nowrap;
+}
+.m-zby-bd .imgbox {
+    position: relative;
+    display: block;
+    float: left;
+    width: 150px;
+    height: 124px;
+    margin-right: 10px;
+    overflow: hidden;
+}
+.m-zby-bd .imgbox .img {
+	display: block;
+	width: 150px;
+	height: 100px;
+	background-color: #ddd;
+}
+.m-zby-bd .imgbox .desc {
+    display: block;
+    height: 24px;
+    font: 14px/24px 微软雅黑,sans-serif;
+    text-align: center;
+    background: #F6F6F6 none repeat scroll 0% 0%;
+    color: #333;
+    white-space: nowrap;
+    padding: 0px 10px;
+    overflow: hidden;
+}
+.m-zby-bd .imgbox .shade {
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 150px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.3) none repeat scroll 0% 0%;
+}

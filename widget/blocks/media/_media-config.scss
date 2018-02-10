@@ -1,0 +1,137 @@
+@import "../../scss/_variables";
+@import "../../scss/_mixins";
+
+// ================================
+// 模块局部公用样式
+
+@mixin media-imgtxt() {
+  &:hover {
+    .media-explain, .media-text { color: inherit; }
+  }
+  .media-explain, .media-text {
+    color: #555;
+  }
+  .media-text {
+    margin-bottom: .5em;
+  }
+}
+
+@mixin media-vertical() {
+}
+
+@mixin media-horizontal() {
+  padding-top: .7em;
+  padding-bottom: .7em;
+  .media-title {
+    line-height: 1.2;
+    margin-bottom: 1em;
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Microsoft YaHei", "微软雅黑", tahoma, arial, simsun, "宋体";
+  }
+  .media-state, .media-time { font-size: pxToEm(12px); }
+  .media-state {
+    color: $gray-light;
+    em { color: $activeColor; }
+  }
+}
+
+@mixin media-goods() {
+  .media-title,
+  .media-price,
+  .media-norms,
+  .media-merch {
+    margin: 7px 0;
+  }
+
+  .thumbnail { border: none; }
+  .media-price {
+    line-height: 1em;
+    color: $gray2;
+    font-size: pxToEm(13px);
+
+    @include text-truncate();
+    em, b {
+      color: $activeColor;
+      font-family: "microsoft yahei", simsun;
+    }
+    b { font-size: 1.2em; }
+    i {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-bottom: 1px;
+      margin-right: 1px;
+      font-size: .8em;
+      font-weight: bold;
+    }
+    .original, .other-info {
+      color: $gray-light2;
+      font-size: 1.4rem;
+      font-family: "microsoft yahei", simsun;
+    }
+    .original {
+      display: inline-block;
+      padding-left: .7em;
+      text-decoration: line-through;
+    }
+    .other-info { float: right; }
+  }
+  .media-norms { color: $gray; }
+  .keyword { color: $activeColor2; }
+}
+
+@mixin media-btns() {
+  .media-btns {
+    padding-left: 2em;
+    padding-top: .7em;
+    &.media-right {
+      vertical-align: middle;
+      .btn {
+        display: block;
+        margin: .8em 0;
+      }
+    }
+  }
+}
+
+
+@mixin media-share() {
+  /* 下拉信息及箭头样式 begin */
+  // 清除bs框架默认样式
+  .dropdown-menu>li>a { padding: .2em 1em; }
+  .dropdown-menu {
+    position: relative;
+    float: none;
+    min-width: 0;
+    margin-top: 0;
+  }
+  .dropdown-menu-wrap {
+    position: absolute;
+    left: 50%;
+    width: 6em;
+    margin-left: -3em;
+    padding-top: 8px;
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      z-index: 1001;
+      margin-left: -8px;
+      visibility: hidden;
+    }
+    &:before {
+      top: 0;
+      @include caret-up(8px, #C0BCBC);
+    }
+    &:after {
+      top: 1px;
+      @include caret-up(8px, #fff);
+    }
+  }
+  &:hover {
+    .dropdown-menu-wrap { &:before, &:after { visibility: visible; }}
+    .dropdown-menu { display: block; }
+  }
+  /* 下拉信息及箭头样式 end */
+}

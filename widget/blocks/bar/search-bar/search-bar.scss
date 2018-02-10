@@ -1,0 +1,90 @@
+@import "../_bar-config";
+
+.search-bar {
+  $innerHt: 34px; // 组件的内部宽度
+  $bw: 3px;  // border-width 边框宽
+
+  .layout-left, .layout-body, .layout-right { vertical-align: middle; }
+
+  .layout-right { text-align: right; }
+  .search-form-box {
+    @include clearfix();
+    line-height: pxToEm($innerHt);
+    border: $bw solid $activeColor;
+    border-right: none;
+    font-size: pxToEm(14px);
+  }
+
+  input, button { border: none; }
+  .search-dropdown, .search-txt, .search-btn {
+    width: 100%;
+  }
+
+  .search-dropdown, .search-btn {
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+  }
+  .search-dropdown {
+    position: relative;
+    min-width: 7em;
+    color: $gray;
+    font-size: pxToEm(12px);
+    border-right: 1px solid $gray-lighter;
+    background-color: $gray-lightest;
+    &:hover { .search-dropdown-menu { display: inline-block; } }
+    a { text-decoration: none; }
+  }
+  .search-dropdown-trigger, .search-dropdown-menu li a {
+    display: block;
+    padding: 0 1em;
+    white-space: nowrap;
+  }
+  .search-dropdown-trigger {
+    display: block;
+    text-align: center;
+    [class^="icon-"], [class*=" icon-"] { margin-left: pxToEm(8px); }
+    .icon-angle-up, .icon-caret-up  { display: none; }
+    &:hover {
+      .icon-angle-up, .icon-caret-up { display: inline-block; }
+      .icon-angle-down, .icon-caret-down { display: none; }
+    }
+  }
+  .search-dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: pxToEm($innerHt + $bw);
+    z-index: 10000;
+    width: 100%;
+    line-height: pxToNum(32px);
+    padding: pxToEm(6px) 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-top: none;
+    li:hover { background-color: darken($body-bg, 5%); }
+  }
+  .search-txt {
+    padding: 0 10px;
+    display: block;
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+  }
+  .search-btn {
+    $ls: .4em;
+
+    white-space: nowrap;
+    background-color: $activeColor;
+
+    letter-spacing: $ls;
+    padding: 0 (1.8em - $ls) 0 1.8em;
+
+    text-align: center;
+    color: #fff;
+    font-size: pxToEm(16px);
+    font-family: "Microsoft YaHei", "Microsoft JhengHei", STHeiti, MingLiu;
+    i { margin-right: 0; }
+  }
+}
