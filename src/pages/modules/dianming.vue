@@ -11,7 +11,7 @@
     </div>
 
     <div
-      v-if="curUsers.length <= 0"
+      v-if="resultsShows <= 0"
       class="dm-result gun-user-result">
       <div
         v-for="(user, idx) in showNames"
@@ -22,10 +22,10 @@
     </div>
 
     <div
-      v-if="!isBegin && curUsers.length > 0"
+      v-if="!isBegin && resultsShows.length > 0"
       class="dm-result dm-result-info">
       <div
-        v-for="(user, idx) in curUsers"
+        v-for="(user, idx) in resultsShows"
         :key="idx"
         class="winning-item result-user">
         <img :src="user.headimgurl" alt="">
@@ -55,7 +55,7 @@
         totalNames: [],
         showNames: [],
         curIds: [],
-        curUsers: [],
+        results: [],
         btnText: '开始点名',
         isBegin: false
       }
@@ -65,6 +65,20 @@
     },
     mounted() {
       console.log('dianming mounted')
+    },
+    computed: {
+      resultsShows() {
+        let resShows = [];
+        this.results.forEach((id, i) => {
+          let user = this.totalUsers.find((el) => {
+            return id == el.id;
+          })
+          resShows.push(user);
+        });
+        console.log('resShows');
+        console.log(resShows);
+        return resShows;
+      }
     },
     methods: {
       start() {
@@ -79,14 +93,17 @@
         if (this.useTotalUsers.length < this.setNums) {
           this.$message({
             showClose: true,
-            message: '未点过的小伙伴少于每次点名的数量，' +
-            '请重置点名或减少每次点名的数量',
+            message: `还有${this.useTotalUsers.length}个小伙伴没被点名，
+              请重置点名或减少每次点名的数量`,
             type: 'warning'
           });
           return;
         }
 
         this.isBegin = !this.isBegin;
+        if (this.isBegin) {
+          this.getTotalNames();
+        }
 
         for (let i = 0; i < this.setNums; i++) {
           if (this.isBegin) {
@@ -102,19 +119,25 @@
       },
       restart() {
         this.showNames = [];
-        this.curUsers = [];
-        this.curIds = [];
+        this.results = [];
+
+        // 有总的用户时
+        if (this.totalUsers > 0) {
+          this.useTotalUsers = Array.of(...this.totalUsers);
+        }
       },
 
       // 显示 名字变化效果。
       show(i) {
         this['dmTimer' + i] = setInterval(() => {
           var rand = this.numRand();
-          this.showNames.splice(i, 1, this.useTotalUsers[rand]);
+          this.showNames.splice(i, 1, this.totalNames[rand]);
+          console.log(this.showNames);
         }, 50);
       },
       getTotalNames() {
-        this.totalUsers.forEach((el, i) => {
+        this.totalNames = [];
+        this.useTotalUsers.forEach((el, i) => {
           this.totalNames.push(el.nickname);
         });
         console.log(this.totalNames);
@@ -127,23 +150,21 @@
       },
       isBegin(val) {
         if (val) {
-          this.curUsers = [];
+          this.results = [];
         } else {
           // 点击停止后，随机取处理设置的每次点名人数出来
-          var rand = this.numRand();
-          console.log(this.useTotalUsers[rand].id);
-          this.results.push(this.useTotalUsers[rand].id);
-          this.useTotalUsers.splice(rand, 1);
+          this.results = [];
+          this.getRandUsers(this.setNums);
 
-          this.curIds.forEach((id) => {
-            let delIdx = this.useTotalUsers.findIndex((el) => {
-              return id == el.id;
-            })
-            this.curUsers.push(this.useTotalUsers[delIdx]);
-
-            // 去重
-            this.useTotalUsers.splice(delIdx, 1);
-          })
+//          this.curIds.forEach((id) => {
+//            let delIdx = this.useTotalUsers.findIndex((el) => {
+//              return id == el.id;
+//            })
+//            this.results.push(this.useTotalUsers[delIdx]);
+//
+//            // 去重
+//            this.useTotalUsers.splice(delIdx, 1);
+//          })
         }
       },
     },

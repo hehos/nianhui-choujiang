@@ -26,14 +26,20 @@
           if (this.initStorageResult) {
             this.initStorageResult();
           }
-          if (this.getTotalNames) {
-            this.getTotalNames();
-          }
           clearInterval(getTotalTimer);
         }
       }, 100)
     },
     methods: {
+      getRandUsers(num) {
+        for (let i = 0; i < num; i++) {
+          var rand = this.numRand();
+          console.log(this.useTotalUsers[rand].id);
+          this.results.push(this.useTotalUsers[rand].id);
+          this.useTotalUsers.splice(rand, 1);
+//          console.log(this.results);
+        }
+      },
       numRand() {
         var rand = Math.floor((Math.random() * 1000000))
           % this.useTotalUsers.length;

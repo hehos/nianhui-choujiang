@@ -97,7 +97,7 @@
         isBegin: false,
         isInitNum: false,
         results: [],
-        resultsShow: [[], [], []],
+        resultsShow: [],
         storageKey: 'cj_results',
         totalUsers: [],
         useTotalUsers: [],
@@ -111,6 +111,7 @@
         nh_storage.createKey(this.storageKey);
       this.resStorageKey = storageKey;
 
+      this.initResultsShow();
 
     },
 
@@ -157,15 +158,8 @@
         this.isBegin = true;
         // 初始化各个奖项人数之后不能再设置，除非重新抽奖
         this.isInitNum = true;
-        $(".num").css('backgroundPositionY', 0);
 
-        for (let i = 0; i < userNum; i++) {
-          var rand = this.numRand();
-          console.log(this.useTotalUsers[rand].id);
-          this.results.push(this.useTotalUsers[rand].id);
-          this.useTotalUsers.splice(rand, 1);
-//          console.log(this.results);
-        }
+        this.getRandUsers(userNum);
 
 //        console.log('this.results');
 //        console.log(this.results);
